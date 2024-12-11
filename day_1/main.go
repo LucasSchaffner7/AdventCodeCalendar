@@ -37,11 +37,6 @@ func read_input(file_name string) ([]int, []int) {
 	return list1, list2
 }
 
-func remove(s []int, i int) []int {
-	s[i] = s[len(s)-1]
-	return s[:len(s)-1]
-}
-
 func calculate_distance(list_locations_1 []int, list_locations_2 []int) int {
 	distance := 0
 
@@ -80,12 +75,6 @@ func main() {
 
 	list_locations_1, list_locations_2 := read_input("input.txt")
 
-	//list_locations_1 := []int{3, 4, 2, 1, 3, 3}
-	//list_locations_2 := []int{4, 3, 5, 3, 9, 3}
-
-	//slices.Sort(list_locations_1)
-	//slices.Sort(list_locations_2)
-
-	fmt.Printf("The result of the first part is : %d\n", calculate_distance(list_locations_1, list_locations_2))
-	fmt.Printf("The result of the second part is : %d\n", calculate_similarity(list_locations_1, list_locations_2))
+	fmt.Printf("The distance between the locations list : %d\n", calculate_distance(list_locations_1, list_locations_2))
+	fmt.Printf("The similarity between the locations list : %d\n", calculate_similarity(list_locations_1, list_locations_2))
 }
